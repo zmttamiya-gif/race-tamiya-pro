@@ -1,18 +1,38 @@
-<div id="admin-panel" style="padding:20px;color:white;">
-  <h2>🎮 แผงควบคุมการแข่งขัน</h2>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>RACE TAMIYA – ADMIN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <button onclick="sendTest()">▶ ส่งรอบทดสอบ</button>
-</div>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
 
-<script type="module">
-  import { db, ref, set } from "./firebase.js";
+<body>
+  <header>
+    <img src="logo.png" class="logo">
+    <div>RACE TAMIYA – ADMIN</div>
+  </header>
 
-  window.sendTest = function () {
-    set(ref(db, "race/table/1"), {
-      lane1: Math.floor(Math.random()*50)+1,
-      lane2: Math.floor(Math.random()*50)+1,
-      lane3: Math.floor(Math.random()*50)+1
-    });
-    alert("ส่งข้อมูลรอบที่ 1 แล้ว");
-  }
-</script>
+  <div id="app">
+    <h2>ตารางการแข่งขัน (Admin)</h2>
+
+    <table id="raceTable">
+      <thead>
+        <tr>
+          <th>รอบ</th>
+          <th>เลน 1</th>
+          <th>เลน 2</th>
+          <th>เลน 3</th>
+        </tr>
+      </thead>
+      <tbody id="raceBody"></tbody>
+    </table>
+  </div>
+
+  <!-- 🔥 JS ต้องเป็น module และ path ต้องตรง -->
+  <script type="module" src="./firebase.js"></script>
+  <script type="module" src="./admin_tables.js"></script>
+</body>
+</html>
