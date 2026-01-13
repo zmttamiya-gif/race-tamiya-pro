@@ -1,1 +1,18 @@
-<!-- Admin Multi-Table + Export Controls -->
+<div id="admin-panel" style="padding:20px;color:white;">
+  <h2>🎮 แผงควบคุมการแข่งขัน</h2>
+
+  <button onclick="sendTest()">▶ ส่งรอบทดสอบ</button>
+</div>
+
+<script type="module">
+  import { db, ref, set } from "./firebase.js";
+
+  window.sendTest = function () {
+    set(ref(db, "race/table/1"), {
+      lane1: Math.floor(Math.random()*50)+1,
+      lane2: Math.floor(Math.random()*50)+1,
+      lane3: Math.floor(Math.random()*50)+1
+    });
+    alert("ส่งข้อมูลรอบที่ 1 แล้ว");
+  }
+</script>
