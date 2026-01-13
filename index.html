@@ -1,2 +1,72 @@
-<script type="module" src="firebase.js"></script>
-<script type="module" src="admin_tables.js"></script>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>RACE TAMIYA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+    }
+    header {
+      background: #000;
+      padding: 16px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    #app {
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 12px;
+      text-align: center;
+      font-size: 18px;
+    }
+    th {
+      background: #0d6efd;
+    }
+  </style>
+</head>
+
+<body>
+  <header>🏁 โปรแกรมแข่งรถ Tamiya</header>
+
+  <div id="app">
+    <h2>ตารางการแข่งขัน</h2>
+
+    <table id="raceTable">
+      <thead>
+        <tr>
+          <th>รอบ</th>
+          <th>เลน 1</th>
+          <th>เลน 2</th>
+          <th>เลน 3</th>
+        </tr>
+      </thead>
+      <tbody id="raceBody">
+        <tr>
+          <td>1</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- JS ต้องเป็น module -->
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="admin_tables.js"></script>
+</body>
+</html>
